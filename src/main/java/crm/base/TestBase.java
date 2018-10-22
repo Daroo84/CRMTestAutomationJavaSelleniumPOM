@@ -20,8 +20,11 @@ public class TestBase {
     public TestBase(){
         try {
             prop = new Properties();
-            FileInputStream ip = new FileInputStream(System.getProperty("user.dir") + "/");
+            FileInputStream ip = new FileInputStream("C:\\ProjectSeleniumPOM_CRM_TestNG\\src\\main\\java\\crm\\config1\\" + "config.properties");
 
+
+        //            "/ProjectSeleniumPOM_CRM_TestNG/src/main/java/crm" + "/config/config//config.properties");
+            System.out.println(ip);
             prop.load(ip);
 
         }catch (FileNotFoundException e){
@@ -36,11 +39,11 @@ public class TestBase {
         String browserName = prop.getProperty("browser");
 
         if(browserName.equals("chrome")){
-            System.setProperty("", "");
+            System.setProperty("webdriver.chrome.driver", "C:/SeleniumDriver/chromedriver.exe");
             driver =new ChromeDriver();
         }
         else if (browserName.equals("FF")){
-            System.setProperty("", "");
+            System.setProperty("webdriver.gecko.driver", "C:/SeleniumDriver/geckodriver.exe");
             driver = new FirefoxDriver();
         }
 
