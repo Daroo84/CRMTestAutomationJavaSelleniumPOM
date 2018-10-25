@@ -9,23 +9,37 @@ import static crm.base.TestBase.driver;
 public class HomePage {
 
 
-    @FindBy(xpath ="")
+    @FindBy(xpath ="//td[contains(text(),'User: Naveen K')]")
     WebElement userNameLabel;
 
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//a[contains(text(),'Contacts')]")
     WebElement contactsLink;
 
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//a[contains(text(),'Deals')]")
     WebElement dealsLink;
 
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//a[contains(text(),'Tasks')]")
     WebElement tasksLink;
 
     //Initializing the Page Object
-
-
     public HomePage(){
         PageFactory.initElements(driver,this);
 
     }
-    public
+    public String verifyHomePageTitle(){
+        return driver.getTitle();
+    }
+
+    public ContactsPage clickOnContactsLink(){
+        contactsLink.click();
+        return new ContactsPage();
+    }
+
+    public DealsPage clickOnDealsLink(){
+        dealsLink().click();
+        return new DealsPage();
+    }
+    public TaskssPage clickOnTasksLink(){
+        tasksLink.click();
+        return new TasksPage();
+}
