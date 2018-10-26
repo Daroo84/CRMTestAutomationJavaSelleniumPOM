@@ -30,16 +30,22 @@ public class HomePage {
         return driver.getTitle();
     }
 
+    public boolean verifyCorrectUserName(){
+        return userNameLabel.isDisplayed();
+    }
+/*
     public ContactsPage clickOnContactsLink(){
         contactsLink.click();
         return new ContactsPage();
     }
 
     public DealsPage clickOnDealsLink(){
-        dealsLink().click();
+        dealsLink.click();
         return new DealsPage();
     }
-    public TaskssPage clickOnTasksLink(){
+    public TaskssPage clickOnTasksLink() {
         tasksLink.click();
         return new TasksPage();
+    }
+    */
 }
