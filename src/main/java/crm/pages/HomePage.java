@@ -33,7 +33,7 @@ public class HomePage {
     public boolean verifyCorrectUserName(){
         return userNameLabel.isDisplayed();
     }
-/*
+
     public ContactsPage clickOnContactsLink(){
         contactsLink.click();
         return new ContactsPage();
@@ -43,9 +43,9 @@ public class HomePage {
         dealsLink.click();
         return new DealsPage();
     }
-    public TaskssPage clickOnTasksLink() {
+    public TasksPage clickOnTasksLink() {
         tasksLink.click();
         return new TasksPage();
     }
-    */
+
 }
