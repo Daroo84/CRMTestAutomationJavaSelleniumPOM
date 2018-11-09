@@ -35,7 +35,7 @@ public class ContactsPage extends TestBase {
         driver.findElement(By.xpath("//a[text()='"+name+"'//parent::td[@class='datalistrow']" + "//preceding-sibling::td[@class='datalistrow']//input[@name='contact_id']")).click();
     }
     public void createNewContact(String title, String ftName, String ltName, String comp){
-        Select select = new Select(driver.findElement((By.name("title")));
+        Select select = new Select(driver.findElement((By.name("title"))));
         select.selectByVisibleText(title);
 
         firstName.sendKeys(ftName);

@@ -53,7 +53,7 @@ public class HomePage {
         tasksLink.click();
         return new TasksPage();
     }
-    public void ClickOnNewContactLink(){
+    public void clickOnNewContactLink(){
         Actions action = new Actions(driver);
         action.moveToElement(contactsLink).build().perform();
         newContactLink.click();

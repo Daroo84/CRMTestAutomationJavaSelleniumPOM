@@ -21,7 +21,7 @@ public class LoginPage extends TestBase {
     //@FindBy(xpath="//input[@type='submit']")
     //WebElement loginBtn;
 
-    WebElement elementToClisk = driver.findElement(By.xpath("//input[@type='submit']"));
+    WebElement elementToClick = driver.findElement(By.xpath("//input[@type='submit']"));
 
     @FindBy(xpath="//img[contains(@class,'img-responsive')]")
     WebElement crmLogo;
