@@ -1,21 +1,18 @@
 package crm.utils;
 
 import crm.base.TestBase;
+import org.apache.commons.io.FileUtils;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
+
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import org.apache.commons.io.FileUtils;
 
 public class TestUtil extends TestBase {
 
@@ -39,7 +36,7 @@ public class TestUtil extends TestBase {
         String currentDir = System.getProperty("user.dir");
         FileUtils.copyFile(scrFile, new File(currentDir + "/screenshots/" + System.currentTimeMillis() + ".png"));
     }
-
+/*
     public static Object[][] getTestData(String sheetName) {
         FileInputStream file = null;
         try {
@@ -62,7 +59,7 @@ public class TestUtil extends TestBase {
         }
         return data;
     }
-
+*/
     public static void sendKeys(WebDriver driver, WebElement element, int timeout, String value) {
         new WebDriverWait(driver, timeout).until(ExpectedConditions.visibilityOf(element));
         element.sendKeys(value);
@@ -70,5 +67,15 @@ public class TestUtil extends TestBase {
     public static void clickOn(WebDriver driver, WebElement element,int timeout){
         new WebDriverWait(driver, timeout).until(ExpectedConditions.elementToBeClickable(element));
         element.click();
+    }
+    public static WebElement waitForElementToBeVisible(WebDriver driver, WebElement webElement, int seconds){
+        WebDriverWait wait = new WebDriverWait(driver, seconds);
+        WebElement element = wait.until(ExpectedConditions.visibilityOf(webElement));
+        return element;
+    }
+    public static WebElement waitforElementToBeClickable(WebDriver driver, WebElement webElement, int seconds) {
+        WebDriverWait wait = new WebDriverWait(driver, seconds);
+        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(webElement));
+        return element;
     }
 }
