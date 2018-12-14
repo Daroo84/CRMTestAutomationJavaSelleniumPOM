@@ -1,7 +1,7 @@
 package crm.base;
 
 //https://www.seleniumeasy.com/selenium-tutorials/simple-page-object-model-framework-example
-
+/*
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -70,3 +70,4 @@ public class TestBaseSetup {
         }
     }
 }
+*/
